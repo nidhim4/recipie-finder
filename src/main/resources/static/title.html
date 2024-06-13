@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe Finder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+        body {font-size:16px;}
+        .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+        .w3-half img:hover{opacity:1}
+    </style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold; background-color: #ffcfbb;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+    <div class="w3-bar-block w3-padding-top-48">
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+        <a href="#intro" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Introduction</a>
+        <a href="#sample-recipes" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sample Recipes</a>
+        <a href="#get-started" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Get Started</a>
+
+    </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:70px" id="showcase">
+        <h1 class="w3-jumbo"><b>Recipe Finder</b></h1>
+    </div>
+
+
+
+    <!-- Services -->
+    <div class="w3-container" id="intro" style="margin-top:15px">
+        <h1 class="w3-xxxlarge w3-text-teal"><b>Introduction</b></h1>
+        <hr style="width:50px;border:5px solid teal" class="w3-round">
+        <p>Welcome to our website, RecipeFinder! Our website integrates several components to create a functional system for taking an input of ingredients and outputting recipes containing those ingredients. Our project uses CSS, Gradle, HTML, Java, JS, and SQL.<br><br>
+
+            A web app built with HTML and JavaScript allows users to input an ingredient via a form, receiving a list of foods containing that ingredient. It uses two services: IngredientService and RecipeService, both employing HashMaps for quick data access. The frontend collects user input and sends it to the backend, where IngredientService finds matching foods using its HashMap. Meanwhile, RecipeService manages restaurant menus, highlighting the app's broad data handling capabilities. After processing, the backend returns a list of matching foods to the frontend for display, enhancing user experience through efficient data retrieval and structured data management.
+
+        </p>
+    </div>
+
+    <!-- Designers -->
+    <div class="w3-container" id="sample-recipes" style="margin-top:40px">
+        <h1 class="w3-xxxlarge w3-text-teal"><b>Sample Recipes</b></h1>
+        <hr style="width:50px;border:5px solid teal" class="w3-round">
+        <p>Here is a list of recipes that you can try! </p>
+        <iframe src="https://docs.google.com/document/d/1tFr0rDk-Ka83hrBrR_Xzl0crR3tO_r4fXndXYre24Sg/edit?usp=sharing" title="description" style="height:700px;width:900px;"></iframe>
+    </div>
+
+    <div class="w3-container" id="get-started" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-teal"><b>Get Started</b></h1>
+        <hr style="width:50px;border:5px solid teal" class="w3-round">
+        <button onclick="location.href='index.html'" class="w3-button w3-padding-large w3-hover-black" style="background-color: #ffcfbb;">Find Recipes!</button>
+
+    </div>
+
+
+    <!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+
+</script>
+
+</body>
+</html>

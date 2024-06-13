@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipe Finder</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="/w3style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 { font-family: "Poppins", sans-serif; }
+        body { background-color: #ffcfbb; }
+        .w3-text-black { color: black; }
+        .w3-container h5 { margin-bottom: 16px; }
+        .form-container { padding: 16px; }
+        .result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold; font-family:'Poppins',serif; background-color: #ffcfbb;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+    <div class="w3-bar-block w3-padding-top-48">
+        <a href="title.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+        <a href="title.html#intro" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Introduction</a>
+        <a href="title.html#sample-recipes" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sample Recipes</a>
+        <a href="title.html#get-started" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Get Started</a>
+    </div>
+</nav>
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="width: 100%; margin-left:340px; margin-right:40px;">
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+
+        <!-- Right Column -->
+        <div class="w3-col">
+
+            <div class="w3-container w3-card w3-white w3-margin-bottom form-container"><br>
+                <h2 class="w3-text-black w3-padding-22 w3-margin-left">Recipe Finder</h2>
+                <div class="w3-container">
+                    <h5 class="w3-text-black"><span class="w3-tag w3-round" style="color: black; background-color: #ffcfbb;">Select the ingredients that you have and we will return recipes that you can make!<br></span></h5>
+                    <form id="ingredient-form" action="/findRecipes" method="POST">
+                        <input type="checkbox" id="bacon" name="ingredients" value="Bacon">
+                        <label for="bacon"> Bacon</label><br>
+
+                        <input type="checkbox" id="bread" name="ingredients" value="Bread">
+                        <label for="bread"> Bread</label><br>
+
+                        <input type="checkbox" id="butter" name="ingredients" value="Butter">
+                        <label for="butter"> Butter</label><br>
+
+                        <input type="checkbox" id="cannedbeans" name="ingredients" value="Canned Beans">
+                        <label for="cannedbeans"> Canned Beans</label><br>
+
+                        <input type="checkbox" id="cheese" name="ingredients" value="Cheese">
+                        <label for="cheese"> Cheese</label><br>
+
+                        <input type="checkbox" id="chicken" name="ingredients" value="Chicken">
+                        <label for="chicken"> Chicken</label><br>
+
+                        <input type="checkbox" id="chickpeas" name="ingredients" value="Chickpeas">
+                        <label for="chickpeas"> Chickpeas</label><br>
+
+                        <input type="checkbox" id="cookingoil" name="ingredients" value="Olive/Vegetable Oil">
+                        <label for="cookingoil"> Olive/Vegetable Oil</label><br>
+
+                        <input type="checkbox" id="currypowder" name="ingredients" value="Curry Powder">
+                        <label for="currypowder"> Curry Powder</label><br>
+
+                        <input type="checkbox" id="eggs" name="ingredients" value="Eggs">
+                        <label for="eggs"> Eggs</label><br>
+
+                        <input type="checkbox" id="flour" name="ingredients" value="Flour">
+                        <label for="flour"> Flour</label><br>
+
+                        <input type="checkbox" id="garlic" name="ingredients" value="Garlic">
+                        <label for="garlic"> Garlic</label><br>
+
+                        <input type="checkbox" id="lentils" name="ingredients" value="Lentils">
+                        <label for="lentils"> Lentils</label><br>
+
+                        <input type="checkbox" id="mayonnaise" name="ingredients" value="Mayonnaise">
+                        <label for="mayonnaise"> Mayonnaise</label><br>
+
+                        <input type="checkbox" id="milk" name="ingredients" value="Milk">
+                        <label for="milk"> Milk</label><br>
+
+                        <input type="checkbox" id="mustard" name="ingredients" value="Mustard">
+                        <label for="mustard"> Mustard</label><br>
+
+                        <input type="checkbox" id="onions" name="ingredients" value="Onions">
+                        <label for="onions"> Onions</label><br>
+
+                        <input type="checkbox" id="pestosauce" name="ingredients" value="Pesto Sauce">
+                        <label for="pestosauce"> Pesto Sauce</label><br>
+
+                        <input type="checkbox" id="potatoes" name="ingredients" value="Potatoes">
+                        <label for="potatoes"> Potatoes</label><br>
+
+                        <input type="checkbox" id="red40" name="ingredients" value="Red 40">
+                        <label for="red40"> Red 40</label><br>
+
+                        <input type="checkbox" id="rice" name="ingredients" value="Rice">
+                        <label for="rice"> Rice</label><br>
+
+                        <input type="checkbox" id="salt" name="ingredients" value="Salt">
+                        <label for="salt"> Salt</label><br>
+
+                        <input type="checkbox" id="samosa" name="ingredients" value="Samosa">
+                        <label for="samosa"> Samosa</label><br>
+
+                        <input type="checkbox" id="soysauce" name="ingredients" value="Soy Sauce">
+                        <label for="soysauce"> Soy Sauce</label><br>
+
+                        <input type="checkbox" id="spices" name="ingredients" value="Spices">
+                        <label for="spices"> Spices</label><br>
+
+                        <input type="checkbox" id="sugar" name="ingredients" value="Sugar">
+                        <label for="sugar"> Sugar</label><br>
+
+                        <input type="checkbox" id="tomato" name="ingredients" value="Tomato">
+                        <label for="tomato"> Tomato</label><br>
+
+                        <input type="checkbox" id="vinegar" name="ingredients" value="Vinegar">
+                        <label for="vinegar"> Vinegar</label><br>
+
+                        <input type="checkbox" id="yogurt" name="ingredients" value="Yogurt">
+                        <label for="yogurt"> Yogurt</label><br><br>
+
+                        <button type="submit" style="background-color: #ffcfbb;">Find Recipes</button>
+                    </form>
+                    <div class="result"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-center w3-margin-top" style="background-color: white;">
+    <h4>Ms. Patil's class</h4>
+</footer>
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipe Finder</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="/w3style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 { font-family: "Roboto", sans-serif; }
+        body { background-color: #ffcfbb; }
+        .w3-text-black { color: black; }
+        .w3-container h5 { margin-bottom: 16px; }
+        .form-container { padding: 16px; }
+        .result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="w3-content w3-margin-top" style="width: 100%;">
+
+    <div class="w3-row-padding">
+
+        <div class="w3-col">
+
+            <div class="w3-container w3-card w3-white w3-margin-bottom form-container"><br>
+                <h2 class="w3-text-black w3-padding-22 w3-margin-left">Recipe Finder</h2>
+                <button onclick="location.href='/'" style="background-color: #ffcfbb;">Home</button>
+                <div class="w3-container">
+                    <h5 class="w3-text-black"><span class="w3-tag w3-round" style="color: black; background-color: #ffcfbb;">Select the ingredients that you have and we will return recipes that you can make!<br></span></h5>
+                    <form id="ingredient-form" action="/findRecipes" method="POST">
+                        <label>Select ingredients: </label>
+                        <br>
+                        <br>
+                        <input type="checkbox" id="bacon" name="ingredients" value="Bacon">
+                        <label for="bacon"> Bacon</label><br>
+
+                        <input type="checkbox" id="bread" name="ingredients" value="Bread">
+                        <label for="bread"> Bread</label><br>
+
+                        <input type="checkbox" id="butter" name="ingredients" value="Butter">
+                        <label for="butter"> Butter</label><br>
+
+                        <input type="checkbox" id="cannedbeans" name="ingredients" value="Canned Beans">
+                        <label for="cannedbeans"> Canned Beans</label><br>
+
+                        <input type="checkbox" id="cheese" name="ingredients" value="Cheese">
+                        <label for="cheese"> Cheese</label><br>
+
+                        <input type="checkbox" id="chicken" name="ingredients" value="Chicken">
+                        <label for="chicken"> Chicken</label><br>
+
+                        <input type="checkbox" id="chickpeas" name="ingredients" value="Chickpeas">
+                        <label for="chickpeas"> Chickpeas</label><br>
+
+                        <input type="checkbox" id="cookingoil" name="ingredients" value="Olive/Vegetable Oil">
+                        <label for="cookingoil"> Olive/Vegetable Oil</label><br>
+
+                        <input type="checkbox" id="currypowder" name="ingredients" value="Curry Powder">
+                        <label for="currypowder"> Curry Powder</label><br>
+
+                        <input type="checkbox" id="eggs" name="ingredients" value="Eggs">
+                        <label for="eggs"> Eggs</label><br>
+
+                        <input type="checkbox" id="flour" name="ingredients" value="Flour">
+                        <label for="flour"> Flour</label><br>
+
+                        <input type="checkbox" id="garlic" name="ingredients" value="Garlic">
+                        <label for="garlic"> Garlic</label><br>
+
+                        <input type="checkbox" id="lentils" name="ingredients" value="Lentils">
+                        <label for="lentils"> Lentils</label><br>
+
+                        <input type="checkbox" id="mayonnaise" name="ingredients" value="Mayonnaise">
+                        <label for="mayonnaise"> Mayonnaise</label><br>
+
+                        <input type="checkbox" id="milk" name="ingredients" value="Milk">
+                        <label for="milk"> Milk</label><br>
+
+                        <input type="checkbox" id="mustard" name="ingredients" value="Mustard">
+                        <label for="mustard"> Mustard</label><br>
+
+                        <input type="checkbox" id="onions" name="ingredients" value="Onions">
+                        <label for="onions"> Onions</label><br>
+
+                        <input type="checkbox" id="pestosauce" name="ingredients" value="Pesto Sauce">
+                        <label for="pestosauce"> Pesto Sauce</label><br>
+
+                        <input type="checkbox" id="potatoes" name="ingredients" value="Potatoes">
+                        <label for="potatoes"> Potatoes</label><br>
+
+                        <input type="checkbox" id="red40" name="ingredients" value="Red 40">
+                        <label for="red40"> Red 40</label><br>
+
+                        <input type="checkbox" id="rice" name="ingredients" value="Rice">
+                        <label for="rice"> Rice</label><br>
+
+                        <input type="checkbox" id="salt" name="ingredients" value="Salt">
+                        <label for="salt"> Salt</label><br>
+
+                        <input type="checkbox" id="samosa" name="ingredients" value="Samosa">
+                        <label for="samosa"> Samosa</label><br>
+
+                        <input type="checkbox" id="soysauce" name="ingredients" value="Soy Sauce">
+                        <label for="soysauce"> Soy Sauce</label><br>
+
+                        <input type="checkbox" id="spices" name="ingredients" value="Spices">
+                        <label for="spices"> Spices</label><br>
+
+                        <input type="checkbox" id="sugar" name="ingredients" value="Sugar">
+                        <label for="sugar"> Sugar</label><br>
+
+                        <input type="checkbox" id="tomato" name="ingredients" value="Tomato">
+                        <label for="tomato"> Tomato</label><br>
+
+                        <input type="checkbox" id="vinegar" name="ingredients" value="Vinegar">
+                        <label for="vinegar"> Vinegar</label><br>
+
+                        <input type="checkbox" id="yogurt" name="ingredients" value="Yogurt">
+                        <label for="yogurt"> Yogurt</label><br><br>
+
+                        <button type="submit" style="background-color: #ffcfbb;">Find Recipes</button>
+                    </form>
+                    <div class="result"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="w3-container w3-center w3-margin-top" style="background-color: white;">
+    <h4>Ms. Patil's class</h4>
+</footer>
+
+</body>
+</html>
+-->
