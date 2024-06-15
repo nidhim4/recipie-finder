@@ -24,10 +24,8 @@ public class RecipieApplication {
         return String.format("Hello %s!", name);
     }
 
-    // New endpoint for displaying a formatted description
     @GetMapping("/description/{id}")
     public String getDescription(@PathVariable("id") String name) {
-        // Example description formatting
         String description = "Please input the ingredients you would have available. We will return a list of recipes that you can make!";
         String description1 = String.format("Hello %s! - %s", name, description);
 
