@@ -11,7 +11,7 @@ import java.util.Map;
 
 @SpringBootApplication
 @RestController
-@RequestMapping("/") // Optional: Define a base path for your API endpoints
+@RequestMapping("/") 
 public class RecipieApplication {
 
     public static void main(String[] args) {
