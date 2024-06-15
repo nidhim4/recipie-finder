@@ -15,7 +15,7 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @GetMapping("/") // Redirect root URL to title.html
+    @GetMapping("/") 
     public String showTitlePage() {
         return "title.html";
     }
